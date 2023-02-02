@@ -32,7 +32,7 @@ function Search() {
       body: JSON.stringify(data),
       headers: {
          'Content-Type': 'application/json',
-         'Authorization': 'Bearer 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'
+         'Authorization': 'Bearer key'
       }
    }).then(response => response.json()).then((data) => {
 
