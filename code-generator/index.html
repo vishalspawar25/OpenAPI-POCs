@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="scripts/script.js"></script>
+
+<body>
+   <div class="container mt-3">
+      <h2>OpenAI API POC</h2>
+
+      <form class="form-inline">
+         <div class="input-group mb-3">
+            <div class="input-group form-control">
+               <input type="text" id="question" class="form-control" required autofocus
+                  style="font-family: monospace;border:none" placeholder="enter your question here"
+                  aria-label="question" aria-describedby="basic-addon2">
+
+               <div class="input-group-append">
+                  <button type="button"  class="btn btn-close" aria-label="Close" onclick="ClearText()" title="Clear">
+                     </button>
+                    
+               </div>
+            </div>
+            <div class="input-group-append">
+               <button type="button" id="mic" class="btn text-danger" onclick="runSpeechRecognition()" title="speak">
+                  <span class="bi bi-mic-fill"></span></button>
+
+            </div>
+
+         </div>
+         <div><span id="action"></span></div>
+         <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Select Language
+
+
+         </button>
+         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Select Language</a></li>
+            <li><a class="dropdown-item" href="#">Python</a></li>
+            <li><a class="dropdown-item" href="#">Java</a></li>
+            <li><a class="dropdown-item" href="#">C#</a></li>
+            <li><a class="dropdown-item" href="#">React</a></li>
+            <li><a class="dropdown-item" href="#">javascript</a></li>
+            <li><a class="dropdown-item" href="#">PHP</a></li>
+            <li><a class="dropdown-item" href="#">HTML</a></li>
+
+         </ul>
+
+         <button type="button" class="btn btn-primary my-1" onclick="Search()">Search</button>
+      </form>
+      <div style="margin:10px 0;padding:5px;color:#fff;background-color: #23241f;" class="overflow-y-auto">
+         <div>
+            <h5 style="display: inline-block;"> Result:</h5>
+
+            <div class="d-flex justify-content-center">
+               <div class="spinner-grow" role="status" id="spinner">
+                  <span class="sr-only"></span>
+               </div>
+            </div>
+            <div style="float:right" id="actionbtns">
+               <button type="button" id="like" class="btn text-success" onclick="CaptureFeedback('Liked')" title="Like">
+                  <span class="bi bi-hand-thumbs-up-fill "></span></button>
+               <button type="button" id="like" class="btn text-danger" onclick="CaptureFeedback('Disliked')"
+                  title="Dislike">
+                  <span class="bi bi-hand-thumbs-down-fill "></span></button>
+               <button type="button" id="btnclipboard" class="btn" style="color:#fff" onclick="CopyToClipboard()"
+                  title="copy to clipboard">
+                  <span class="bi bi-clipboard"></span></button>
+            </div>
+         </div>
+         <div style="max-height:450px;overflow-y:auto;clear:both">
+            <pre><code id="result">
+              
+            </code></pre>
+
+         </div>
+
+      </div>
+
+   </div>
+
+</body>
+
+</html>
