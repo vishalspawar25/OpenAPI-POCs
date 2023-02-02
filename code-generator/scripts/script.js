@@ -1,7 +1,7 @@
 var language = '';
 var result;
 var question;
-var api_base_url='https://d3ipqazoorrj7h.cloudfront.net/'
+var api_base_url='your_api_url'
 const UserFeedback = new Object();
 
 function Search() {
